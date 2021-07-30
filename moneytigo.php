@@ -34,7 +34,7 @@ class Moneytigo extends PaymentModule
     $this->tab = 'payments_gateways';
     $this->version = '1.1.1';
     $this->author = 'IPS INTERNATIONNAL SAS';
-    $this->ps_versions_compliancy = array('min' => '1.4', 'max' => '1.5.6.3');
+    $this->ps_versions_compliancy = array('min' => '1.4', 'max' => '1.5');
     $this->currencies = true;
     $this->currencies_mode = 'checkbox';
     parent::__construct();
@@ -188,11 +188,20 @@ class Moneytigo extends PaymentModule
 
   public function hookBackOfficeHeader($params)
   {
-    return ("
-		<link rel='stylesheet' href='" . $this->_path . "views/css/moneytigo_back.css'> 
-		<script src='" . $this->_path . "views/js/validateConfiguration.js' type='text/javascript'>
-		");
-  }
+        if(_PS_VERSION_ >= '1.5')
+{
+        $this->context->controller->addCSS($this->_path.'views/css/moneytigo_back.css');
+        $this->context->controller->addJS($this->_path.'views/js/validateConfiguration.js');
+}
+else
+{
+   return ("
+                <link rel='stylesheet' href='" . $this->_path . "views/css/moneytigo_back.css'>
+                <script src='" . $this->_path . "views/js/validateConfiguration.js' type='text/javascript'>
+                ");
+}
+ }
+
 
   public function getContent()
   {
