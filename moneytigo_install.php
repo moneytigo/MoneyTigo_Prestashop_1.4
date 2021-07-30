@@ -45,23 +45,7 @@ class MoneytigoInstall
   /** delete all order state **/
   public function checkOrderStates($modulename, $terms = NULL, $iso = NULL)
   {
-    if (_PS_VERSION_ > '1.5') {
-      /* @var $orderState OrderState */
-      $collection = new PrestaShopCollection('OrderState');
-      $collection->where('module_name', '=', $modulename);
-      $orderStates = $collection->getResults();
-      if ($orderStates == false) {
-        return false;
-      }
-      foreach ($orderStates as $orderState) {
-        if ($orderState->name[$iso] == $terms) {
-          $idStates = $orderState->id;
-          return $idStates;
-        }
-      }
-    } else {
       return false;
-    }
   }
 
   /**
