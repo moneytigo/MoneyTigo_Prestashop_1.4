@@ -1,3 +1,5 @@
+### [<< Retour à la page précédente](index)
+
 ## Module de paiement MoneyTigo pour PrestaShop 1.4 & 1.5
 
 Ce module de paiement vous permet d'accepter les paiements par carte de crédit via la solution de paiement MoneyTigo.com. (https://www.moneytigo.com).
