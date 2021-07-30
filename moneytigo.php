@@ -34,7 +34,7 @@ class Moneytigo extends PaymentModule
     $this->tab = 'payments_gateways';
     $this->version = '1.1.1';
     $this->author = 'IPS INTERNATIONNAL SAS';
-    $this->ps_versions_compliancy = array('min' => '1.4', 'max' => '1.5');
+    $this->ps_versions_compliancy = array('min' => '1.4', 'max' => '1.5.6.3');
     $this->currencies = true;
     $this->currencies_mode = 'checkbox';
     parent::__construct();
